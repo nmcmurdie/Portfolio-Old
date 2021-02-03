@@ -1,0 +1,290 @@
+@font-face {
+    font-family: roboto;
+    src: url('res/roboto.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: product-sans;
+    src: url('res/product-sans.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+html {
+    --color-main: #ef6c00;
+    --color-darker: #e65100;
+}
+body {
+	margin: 0;
+	font-family: roboto, arial;
+	background-color: var(--color-main);
+	user-select: none;
+}
+.header {
+	position: absolute;
+	width: 100%;
+	height: 35%;
+}
+.header::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	background-color: #fff;
+	left: 0;
+	bottom: 0;
+}
+.main {
+	position: absolute;
+	width: 100%;
+	height: 68%;
+	background-color: #fff;
+	top: 35%;
+}
+.title {
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	color: #999999;
+	text-shadow: 0 2px 4px rgba(0,0,0,.05);
+	font-family: product-sans, roboto, arial;
+	font-size: 46px;
+	text-align: center;
+	z-index: 1;
+	white-space: nowrap;
+}
+.links {
+	position: absolute;
+	width: 200px;
+	height: 60px;
+	top: calc(30% + 80px);
+	left: calc(50% - 100px);
+}
+.link {
+	position: relative;
+	display: inline-block;
+	width: 54px;
+	height: 54px;
+	border-radius: 10px;
+	box-shadow: 0 2px 4px rgba(0,0,0,.15);
+	background-color: #4CAF50;
+	background-image: url(res/email.svg);
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center center;
+	margin: 0 5px;
+	transition: box-shadow .2s linear;
+}
+.link.linkedin {
+	background-image: url(res/linkedin.svg);
+	background-color: #3F51B5;
+}
+.link.github {
+	background-image: url(res/github.png);
+	background-color: #f44336;
+}
+.link:hover { box-shadow: 0 3px 6px rgba(0,0,0,.2); }
+.profile {
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	border: 10px solid #f1f1f1;
+	border-radius: 50%;
+	transform: translate(-50%, 50%);
+	background-color: #dddddd;
+	background-image: url(res/profile.jpeg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 160px 160px;
+	left: 50%;
+	bottom: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.2);
+	z-index: 1;
+}
+#shapes {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.shape {
+	position: absolute;
+	background-color: var(--color-darker);
+	width: 50px;
+	height: 50px;
+}
+.square { border-radius: 5px; }
+.circle { border-radius: 50%; }
+.x {
+	width: 65px;
+	height: 20px;
+	border-radius: 20px;
+}
+.x::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 65px;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	border-radius: 20px;
+	background-color: inherit;
+}
+.continue {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	left: calc(50% - 35px);
+	top: 82%;
+	background-color: #efefef;
+	background-image: url(res/arrow.svg);
+	background-repeat: no-repeat;
+	background-size: 42px 42px;
+	background-position: center center;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	animation: continue 2.5s ease infinite;
+}
+.continue::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	bottom: 0;
+}
+@keyframes continue {
+	0% { background-position: center -150%; }
+	25% { background-position: center center; }
+	75% { background-position: center center; }
+	100% { background-position: center 240%; }
+}
+.content {
+	position: absolute;
+	height: auto;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: #efefef;
+	top: calc(82% + 35px);
+	padding: 40px 0 150px 0;
+}
+.content-title {
+	position: relative;
+	width: 100%;
+	font-size: 40px;
+	font-family: product-sans, roboto, arial;
+	text-align: center;
+	color: #6c6c6c;
+	margin-bottom: 40px;
+}
+.content-text {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	min-height: 130px;
+	font-size: 22px;
+	font-family: product-sans;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	background-image: url(res/info.svg);
+	background-size: 150px 150px;
+	background-position: center 0;
+	background-repeat: no-repeat;
+	padding: 175px 20px 0 20px;
+    text-align: center;
+}
+.content-text.quickpage {
+	background-image: url(res/quickpage.png);
+	background-size: 140px 140px;
+}
+.content-text.chemtools {
+	background-image: url(res/chemtools.png);
+	background-size: 160px 160px;
+}
+.content-text.github {
+	background-image: url(res/projects.png);
+	background-size: 140px 140px;
+}
+.content-text.about { text-align: left; }
+@media only screen and (min-width: 800px) {
+	.content-text {
+		padding: 0  0 0 220px;
+		background-position: 30px center;
+        font-size: 30px;
+        text-align: left;
+	}
+	.content-text.quickpage { background-position: 40px center; }
+	.content-text.github { background-position: 38px center; }
+}
+.content-desc, .key, grey { color: #6c6c6c; }
+.key {
+   font-weight: 600;
+   height: 50px;
+   position: relative;
+   display: inline-block;
+   width: 110px;
+   vertical-align: top;
+}
+.val {
+   display: inline-block;
+   vertical-align: top;
+   width: calc(100% - 115px);
+}
+.val-space {
+    margin-bottom: 10px;
+}
+hl { color: #607D8B; }
+.footer {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	background-color: #dddddd;
+	bottom: 0;
+	color: #5c5c5c;
+	line-height: 100px;
+	text-align: center;
+}
+.btn {
+	position: relative;
+	display: inline-block;
+	background-color: #fff;
+	left: calc(50% - 120px);
+	width: 240px;
+	height: 50px;
+	text-align: center;
+	font-family: product-sans;
+	font-size: 28px;
+	border-radius: 45px;
+	margin: 40px 10px 0;
+	color: #5068EB;
+	box-shadow: 0 3px 6px rgba(0,0,0,.1);
+	transition: background-color .2s linear, color .2s linear;
+	overflow: hidden;
+	cursor: pointer;
+}
+.btn::before {
+	content: "";
+	position: absolute;
+	background-color: var(--color-main);
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	border-radius: 45px;
+	transition: top .1s linear;
+}
+.btn:hover::before { top: 0; }
+.btn::after {
+	content: attr(title);
+	position: absolute;
+	width: 100%;
+	transform: translateX(-50%);
+	line-height: 50px;
+	color: var(--color-main);
+	transition: color .1s linear;
+}
+.btn:hover::after { color: #fff; }
